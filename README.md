@@ -105,3 +105,6 @@ Change upstream in gradle.properties (purpurRef)
 1. ./gradlew applyPatches
 2. ./gradlew build
 3. ./gradlew createReobfPaperclipJar
+
+Finished server build: /build/libs/slimeworldmanager-paperclip-\*.jar
+Finished plugin build: /plugin/build/libs/plugin-\*.jar
