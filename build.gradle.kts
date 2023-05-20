@@ -33,6 +33,7 @@ allprojects {
         maven("https://repo.codemc.io/repository/nms/")
         maven("https://repo.rapture.pw/repository/maven-releases/")
         maven("https://repo.glaremasters.me/repository/concuncan/")
+        maven("https://jitpack.io/")
     }
 }
 
@@ -66,8 +67,14 @@ paperweight {
     remapRepo.set(paperMavenPublicUrl)
     decompileRepo.set(paperMavenPublicUrl)
 
-    usePaperUpstream(providers.gradleProperty("paperRef")) {
-        withPaperPatcher {
+    useStandardUpstream("purpur") {
+        url.set(github("purpurmc", "purpur"))
+        ref.set(providers.gradleProperty("purpurRef"))
+
+        withStandardPatcher {
+            apiSourceDirPath.set("Purpur-API")
+            serverSourceDirPath.set("Purpur-Server")
+
             apiPatchDir.set(layout.projectDirectory.dir("patches/api"))
             apiOutputDir.set(layout.projectDirectory.dir("slimeworldmanager-api"))
 
